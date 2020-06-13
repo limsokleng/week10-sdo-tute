@@ -94,7 +94,7 @@ jobs:
       - run:
           name: upgrade database
           command: |
-            kubectl exec tech-test-app -n test -- ./TechTestApp updatedb -s
+            kubectl exec deployment/tech-test-app -n test -- ./TechTestApp updatedb -s
 
 workflows:
   version: 2
