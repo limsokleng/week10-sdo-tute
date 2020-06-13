@@ -86,6 +86,10 @@ jobs:
             cd artifacts/infra
             make init
             make up
+      - run: 
+          name: deploy app
+          command: |
+            helm upgrade techtestapp artifacts/techtestapp.tgz -i -n test --wait --set image=$(cat artifacts/image.txt)
 
 workflows:
   version: 2
