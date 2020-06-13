@@ -69,7 +69,7 @@ jobs:
           root: ./
           paths:
             - artifacts
-            
+
   deploy-test:
     docker:
       - image: cimg/base:2020.01
@@ -129,6 +129,10 @@ workflows:
       - deploy-test:
           requires:
             - build
+      - approval:
+          type: approval
+          requires:
+            - deploy-test
       - deploy-prod:
           requires:
             - deploy-test
