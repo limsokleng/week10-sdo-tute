@@ -80,7 +80,6 @@ jobs:
           at: ./
 
       - setup-cd
-      
       - run:
           name: deploy infra
           command: |
