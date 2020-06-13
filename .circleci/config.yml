@@ -76,7 +76,7 @@ jobs:
     environment:
       ENV: test
     steps:
-      - attach_worksapce:
+      - attach_workspace:
         at: ./
       - setup-cd
       - run:
