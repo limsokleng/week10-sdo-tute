@@ -119,7 +119,6 @@ jobs:
           name: upgrade database
           command: |
             kubectl exec deployment/tech-test-app -n prod -- ./TechTestApp updatedb -s
-
 workflows:
   version: 2
   pipeline:
