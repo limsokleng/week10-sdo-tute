@@ -69,6 +69,7 @@ jobs:
           root: ./
           paths:
             - artifacts
+            
   deploy-test:
     docker:
       - image: cimg/base:2020.01
@@ -94,7 +95,8 @@ jobs:
           name: upgrade database
           command: |
             kubectl exec deployment/tech-test-app -n test -- ./TechTestApp updatedb -s
-  deploy-test:
+
+  deploy-prod:
     docker:
       - image: cimg/base:2020.01
     environment:
